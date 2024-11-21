@@ -1,0 +1,140 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+
+:root {
+    --bg-color: #ddf2f5;
+    --border-color: #7fd8e6;
+    --text-color: #333;
+    --card-bg: #fff;
+    --transition-speed: 1s;
+}
+
+[data-theme='dark'] {
+    --bg-color: #1a1a1a;
+    --border-color: #444;
+    --text-color: #fff;
+    --card-bg: #2d2d2d;
+}
+
+/* 为所有使用变量的元素添加过渡 */
+* {
+    transition: background-color var(--transition-speed) ease,
+                color var(--transition-speed) ease,
+                border-color var(--transition-speed) ease,
+                box-shadow var(--transition-speed) ease;
+}
+
+.main__wrap {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    padding: 50px 0px;
+    justify-content: center;
+    transition: all 0.5s ease;
+}
+
+.card__box {
+    padding: 50px 30px;
+    border: 10px solid var(--border-color);
+    border-radius: 12px;
+    background-color: var(--card-bg);
+    transition: all 0.3s ease;
+}
+
+.theme-toggle{
+    position: relative;
+    padding: 8px 16px;
+    border-radius: 20px;
+    cursor: pointer;
+    overflow: hidden;
+    transform-origin: center;
+    transition: transform 0.2s ease;
+}
+
+.row {
+    display: flex;
+    justify-content: center !important;
+    align-items: center;
+}
+
+.navbar {
+    display: flex;
+    justify-content: center;
+    background: transparent !important;
+    margin-bottom: 20px;
+}
+
+.navbar-brand {
+    font-size: 20px;
+    font-weight: 200;
+}
+
+.btn {
+    cursor: pointer !important;
+    width: 80px;
+    height: 30px;
+    background-color: var(--border-color);
+    color: var(--text-color);
+    border: 0px;
+    border-radius: 20px;
+    margin-top: 10px;
+    margin-left: 5px;
+    margin-bottom: 10px;
+    font-weight: 1000;
+}
+
+.badge {
+    border-radius: 8px;
+    text-align: center;
+    line-height: 40px;
+    font-weight: 1000;
+    background-color: #7fd8e6;
+    color: #fff;
+    margin-right: 5px;
+    display: inline-block;
+    width: 80px;
+}
+
+.primary {
+    background-color: rgb(2, 176, 245);
+}
+
+.warning {
+    background-color: rgb(255, 193, 7);
+}
+
+.main {
+    background-color: #7fd8e6;
+}
+
+.delete {
+    background-color: crimson;
+}
+
+.sub {
+    background-color: #aaa;
+}
+
+/* 添加移动端响应式样式 */
+@media (max-width: 768px) {
+    .main__wrap {
+        padding: 20px 10px;
+    }
+
+    .card__box {
+        padding: 20px 15px;
+    }
+
+    .row {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .btn {
+        width: 100%;
+        margin: 5px 0;
+    }
+}
